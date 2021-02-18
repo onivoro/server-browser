@@ -1,0 +1,10 @@
+{
+  "name": "@onivoro/server-browser",
+  "version": "0.0.1",
+  "dependencies": {
+    "puppeteer": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^5.4.3"
+  }
+}
