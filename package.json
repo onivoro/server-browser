@@ -9,7 +9,7 @@
   "dependencies": {
     "@nestjs/common": "^7.6.12",
     "@onivoro/server-disk": "^0.2.0",
-    "puppeteer": "^7.1.0",
+    "puppeteer-core": "^9.1.1",
     "puppeteer-ipc": "^1.1.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.6.3"
