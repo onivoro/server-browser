@@ -15,9 +15,8 @@ export class BrowserService {
     async createAppRuntime(url: string) {
         const { page, browser } = await this.launch(url);
 
-        const ipc = new IPC(page);        
-        const startResult = await ipc.start();
-        return {startResult, ipc, browser, page}
+        const ipc = await new IPC(page).start();
+        return {ipc, browser, page}
     }
 
     async launch(url: string) {
