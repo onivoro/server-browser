@@ -1,1 +1,1 @@
-export const chromiumConfigToken = Symbol('chromiumConfig');
+export const chromiumConfigToken = Symbol("chromiumConfig");

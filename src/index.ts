@@ -1,7 +1,11 @@
-export { BrowserService } from './lib/services/browser.service';
-export { driverToken } from './lib/tokens/driver-token';
-export { RenderService } from './lib/services/render.service';
-export { ServerBrowserModule } from './lib/server-browser.module';
-import {test} from './lib/test';
+export { chromiumConfig } from './lib/config/chromium-config';
 
-test().then(console.warn.bind(console, 'si')).catch(console.warn.bind(console, 'no'))
+export { BrowserService } from './lib/services/browser.service';
+export { RenderService } from './lib/services/render.service';
+
+export { driverToken } from './lib/tokens/driver-token';
+export { chromiumConfigToken } from './lib/tokens/chromium-config-token';
+
+export { ServerBrowserModule } from './lib/server-browser.module';
+export { IChromiumConfig } from './lib/types/chromium-config.interface';
+export { IRenderOptions } from './lib/types/render-options.interface';

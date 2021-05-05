@@ -1,7 +1,7 @@
-import { IChromiumConfig } from './chromium-config.interface';
+import { IChromiumConfig } from "./chromium-config.interface";
 
 export interface IRenderOptions {
-    url: string;
-    path?: string;
-    config: IChromiumConfig
+  url: string;
+  path?: string;
+  config: IChromiumConfig;
 }
