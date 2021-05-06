@@ -21,15 +21,12 @@ export class BrowserService {
     let browser!: Browser;
 
     browser = await launch({
-      ...this.config,
-      devtools: true,
-      defaultViewport: { height: 800, width: 1600 },
+      ...this.config
     });
 
     const pages = await browser.pages();
 
-    const page = pages[0];
-    // page.setContent(`<html><title>titulo</title><body><h1>cuerpo</h1><pre>${url}</pre></body></html>`)
+    const page = pages[0];    
 
     await page.goto(url, { waitUntil: "networkidle0" });
 
