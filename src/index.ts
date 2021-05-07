@@ -1,4 +1,4 @@
-export { chromiumConfig } from './lib/config/chromium-config';
+
 
 export { BrowserService } from './lib/services/browser.service';
 export { RenderService } from './lib/services/render.service';

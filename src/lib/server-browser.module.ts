@@ -9,19 +9,22 @@ import { RenderService } from "./services/render.service";
 @Module({})
 export class ServerBrowserModule {
   static forRoot(chromiumConfig: IChromiumConfig): DynamicModule {
+    const providers = [
+      BrowserService,
+      RenderService,
+      { provide: chromiumConfigToken, useValue: chromiumConfig },
+      {
+        provide: driverToken,
+        useFactory: async () => {
+          return await puppeteer.launch(chromiumConfig);
+        },
+      },
+    ];
+    
     return {
       module: ServerBrowserModule,
-      providers: [
-        BrowserService,
-        RenderService,
-        { provide: chromiumConfigToken, useValue: chromiumConfig },
-        {
-          provide: driverToken,
-          useFactory: async () => {
-            return await puppeteer.launch(chromiumConfig);
-          },
-        },
-      ],
+      providers,
+      exports: providers
     };
   }
 }
