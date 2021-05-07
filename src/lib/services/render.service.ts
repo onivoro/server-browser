@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { IRenderOptions } from "../types/render-options.interface";
-import { Browser, launch } from "puppeteer";
+import { Browser, launch } from "puppeteer-core";
 import { Inject, Injectable } from "@nestjs/common";
 import { chromiumConfigToken } from "../tokens/chromium-config-token";
 import { IChromiumConfig } from "../types/chromium-config.interface";

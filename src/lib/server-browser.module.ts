@@ -3,7 +3,7 @@ import { BrowserService } from "./services/browser.service";
 import { chromiumConfigToken } from "./tokens/chromium-config-token";
 import { IChromiumConfig } from "./types/chromium-config.interface";
 import { driverToken } from "./tokens/driver-token";
-import { launch } from "puppeteer";
+import puppeteer = require("puppeteer-core");
 import { RenderService } from "./services/render.service";
 
 @Module({})
@@ -18,7 +18,7 @@ export class ServerBrowserModule {
         {
           provide: driverToken,
           useFactory: async () => {
-            return await launch(chromiumConfig);
+            return await puppeteer.launch(chromiumConfig);
           },
         },
       ],

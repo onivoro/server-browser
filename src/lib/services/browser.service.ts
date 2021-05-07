@@ -1,5 +1,5 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { Browser, launch } from "puppeteer";
+import { Browser, launch } from "puppeteer-core";
 import { chromiumConfigToken } from "../tokens/chromium-config-token";
 import { IChromiumConfig } from "../types/chromium-config.interface";
 import { IPC } from "puppeteer-ipc/main";
@@ -13,7 +13,7 @@ export class BrowserService {
   async createAppRuntime(url: string) {
     const { page, browser } = await this.launch(url);
 
-    const ipc = await new IPC(page).start();
+    const ipc = await new IPC(page as any).start();
     return { ipc, browser, page };
   }
 
