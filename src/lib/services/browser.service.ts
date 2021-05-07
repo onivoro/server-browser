@@ -23,10 +23,13 @@ export class BrowserService {
     browser = await launch({
       ...this.config
     });
+    
 
     const pages = await browser.pages();
 
     const page = pages[0];    
+
+    await page.setCacheEnabled(false);
 
     await page.goto(url, { waitUntil: "networkidle0" });
 
