@@ -3,7 +3,6 @@
 export { BrowserService } from './lib/services/browser.service';
 export { RenderService } from './lib/services/render.service';
 
-export { driverToken } from './lib/tokens/driver-token';
 export { chromiumConfigToken } from './lib/tokens/chromium-config-token';
 
 export { ServerBrowserModule } from './lib/server-browser.module';
